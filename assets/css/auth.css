@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+}
+
+html {
+  background-color: #f4f1f8;
+}
+
+html .btn {
+  border-radius: 0;
+}
+
+html .btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+html .auth {
+  background-color: #f4f1f8;
+  overflow: hidden;
+}
+
+html .auth .auth-input {
+  margin-top: 30px;
+}
+
+html .auth .auth-input .logo {
+  font-size: 36px;
+  color: var(--bs-orange);
+  font-weight: 700;
+}
+
+html .auth .auth-input h1 {
+  color: var(--bs-dark);
+  margin-top: 24px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+html .auth .auth-input p {
+  color: var(--bs-dark);
+}
+
+html .auth .auth-input .form {
+  margin-top: 30px;
+  background-color: var(--bs-white);
+  padding: 50px;
+  position: relative;
+}
+
+html .auth .auth-input .form label {
+  color: var(--bs-dark);
+}
+
+html .auth .auth-input .form input {
+  border-radius: 0;
+  border: 1px solid var(--bs-light);
+}
+
+html .auth .auth-input .form input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid var(--bs-orange);
+}
+
+html .auth .auth-input .form .btn {
+  border-radius: 0;
+  width: 100%;
+  background-color: var(--bs-orange);
+  color: var(--bs-white);
+  font-size: 18px;
+}
+
+html .auth .auth-input .form .btn:hover {
+  background-color: #dc8607;
+}
+
+html .auth .auth-input .form img {
+  width: 20px;
+  position: absolute;
+  margin-top: -25px;
+  right: 70px;
+}
+
+html .auth .image {
+  background-color: var(--bs-indigo);
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html .auth .image img {
+  margin-top: 70px;
+  width: 80%;
+}
+/*# sourceMappingURL=auth.css.map */

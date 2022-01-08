@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+}
+html {
+  background-color: #f4f1f8;
+
+  .btn {
+    border-radius: 0;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .auth {
+    background-color: #f4f1f8;
+    overflow: hidden;
+    .auth-input {
+      margin-top: 30px;
+      .logo {
+        font-size: 36px;
+        color: var(--bs-orange);
+        font-weight: 700;
+      }
+      h1 {
+        color: var(--bs-dark);
+        margin-top: 24px;
+        font-size: 32px;
+        font-weight: 700;
+      }
+      p {
+        color: var(--bs-dark);
+      }
+      .form {
+        margin-top: 30px;
+        background-color: var(--bs-white);
+        padding: 50px;
+        position: relative;
+        label {
+          color: var(--bs-dark);
+        }
+        input {
+          border-radius: 0;
+          border: 1px solid var(--bs-light);
+          &:focus {
+            box-shadow: none;
+            border: 1px solid var(--bs-orange);
+          }
+        }
+        .btn {
+          border-radius: 0;
+          width: 100%;
+          background-color: var(--bs-orange);
+          color: var(--bs-white);
+          font-size: 18px;
+          &:hover {
+            background-color: #dc8607;
+          }
+        }
+        img {
+          width: 20px;
+          position: absolute;
+          margin-top: -25px;
+          right: 70px;
+        }
+      }
+    }
+    .image {
+      background-color: var(--bs-indigo);
+      height: 100vh;
+      // display: flex;
+      position: fixed;
+      right: 0;
+      justify-content: center;
+      img {
+        margin-top: 70px;
+        width: 80%;
+      }
+    }
+  }
+}
