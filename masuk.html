@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masuk - Whatsaap Gateway</title>
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-5.0.0-alpha3-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/auth.css" />
+  </head>
+  <body>
+    <section class="auth">
+      <div class="row">
+        <div class="col-lg-6 auth-input">
+          <div class="container-fluid">
+            <div class="col-md-10 offset-md-1">
+              <div class="logo">Logo</div>
+              <h1>Masuk</h1>
+              <p>Ayo kembali gunakan Whatsapp Gateway dengan akunmu.</p>
+              <div class="form">
+                <form method="POST" action="" id="form">
+                  <span id="salah" style="font-style: italic"></span>
+                  <div class="col-12 mb-3">
+                    <label for="namaPengguna" class="mb-2">Nama Pengguna</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="namaPengguna"
+                      name="namaPengguna"
+                      placeholder="Masukan nama pengguna"
+                    />
+                    <span
+                      id="namaPenggunaVal"
+                      style="font-style: italic"
+                    ></span>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label for="kataSandi" class="mb-2">Kata Sandi</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="kataSandi"
+                      name="kataSandi"
+                      placeholder="Masukan kata sandi"
+                    />
+                    <img src="assets/img/icon/hide.png" id="showHide" alt="" />
+                    <span id="kataSandiVal" style="font-style: italic"></span>
+                  </div>
+                  <div class="mb-5">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="ingatSaya"
+                    />
+                    <label class="form-check-label" for="ingatSaya"
+                      >Ingat saya</label
+                    >
+                    <a href="daftar.html" class="float-right"
+                      >Lupa kata sandi?</a
+                    >
+                  </div>
+                  <button type="submit" class="btn my-3">Masuk</button>
+                </form>
+                <center><a href="daftar.html">Daftar</a></center>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-none d-lg-block image text-center">
+          <img src="assets/img/auth.svg" alt="" />
+        </div>
+      </div>
+    </section>
+    <script src="vendor/bootstrap-5.0.0-alpha3-dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/masuk.js"></script>
+  </body>
+</html>

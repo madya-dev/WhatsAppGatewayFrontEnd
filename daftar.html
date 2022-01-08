@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar - Whatsaap Gateway</title>
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-5.0.0-alpha3-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/auth.css" />
+  </head>
+  <body>
+    <section class="auth">
+      <div class="row">
+        <div class="col-lg-6 auth-input">
+          <div class="container-fluid">
+            <div class="col-12 col-md-10 offset-md-1">
+              <div class="logo">Logo</div>
+              <h1>Daftar</h1>
+              <p>
+                Ayo jadi bagian dari Whatsapp Gateway dengan menjadi member
+                kami.
+              </p>
+              <div class="form">
+                <form method="post" id="form" action="">
+                  <div class="nama">
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="namaDepan" class="mb-2">Nama Depan</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="namaDepan"
+                          name="namaDepan"
+                          placeholder="Masukan nama depan"
+                        />
+                        <span
+                          id="namaDepanVal"
+                          style="font-style: italic"
+                        ></span>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="namaBelakang" class="mb-2"
+                          >Nama Belakang</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="namaBelakang"
+                          name="namaBelakang"
+                          placeholder="Masukan nama belakang"
+                        />
+                        <span
+                          id="namaBelakangVal"
+                          style="font-style: italic"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label for="namaPengguna" class="mb-2">Nama Pengguna</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="namaPengguna"
+                      name="namaPengguna"
+                      placeholder="Masukan nama pengguna"
+                    />
+                    <span id="namaPenggunaVal" style="font-style: italic"
+                      >(nama pengguna minimal 5 karakter)</span
+                    >
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label for="email" class="mb-2">Email</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      placeholder="Masukan alamat email"
+                    />
+                    <span id="emailVal" style="font-style: italic"></span>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label for="kataSandi" class="mb-2">Kata Sandi</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="kataSandi"
+                      name="kataSandi"
+                      placeholder="Masukan kata sandi"
+                    />
+                    <img src="assets/img/icon/hide.png" id="showHide" alt="" />
+                    <span id="kataSandiVal" style="font-style: italic"
+                      >(password minimal 8 karakter dan mengandung 1 huruf
+                      kapital, 1 huruf kecil, dan 1 angka!)</span
+                    >
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label for="konfirmasiKataSandi" class="mb-2"
+                      >Konfirmasi Kata Sandi</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="konfirmasiKataSandi"
+                      name="konfirmasiKataSandi"
+                      placeholder="Masukan ulang kata sandi"
+                    />
+                    <img
+                      src="assets/img/icon/hide.png"
+                      id="showHideKonfirmasi"
+                      alt=""
+                    />
+                    <span
+                      id="konfirmasiKataSandiVal"
+                      style="font-style: italic"
+                    ></span>
+                  </div>
+                  <button type="submit" class="btn my-3" id="btn-submit">
+                    Daftar
+                  </button>
+                </form>
+                <center><a href="masuk.html">Masuk</a></center>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-none d-lg-block image text-center">
+          <img src="assets/img/auth.svg" alt="" />
+        </div>
+      </div>
+    </section>
+    <script src="vendor/bootstrap-5.0.0-alpha3-dist/js/bootstrap.min.js"></script>
+    <script src="vendor/sweatalert2/sweetalert2.all.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/daftar.js"></script>
+  </body>
+</html>

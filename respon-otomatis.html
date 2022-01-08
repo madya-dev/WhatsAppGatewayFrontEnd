@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirim Pesan - Whatsapp gateway</title>
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-5.0.0-alpha3-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+    <script src="assets/js/auth.js"></script>
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <ul class="navbar-nav sidebar" id="sidebar">
+        <div class="container">
+          <div class="brand">
+            <a href="dashboard.html" class="nav-link"
+              ><i class="fa fa-robot"></i> <span class="logo">Logo</span></a
+            >
+          </div>
+          <div id="menu-container" style="margin-top: -10px">
+            <div class="spinner spiner-grow"></div>
+          </div>
+        </div>
+      </ul>
+      <div class="content">
+        <nav class="navbar topbar">
+          <div class="container">
+            <button class="btn" id="sidebarToggle" accesskey="s">
+              <i class="fa fa-fw fa-bars"></i>
+            </button>
+            <ul class="navbar-nav ml-auto">
+              <div class="profile dropleft">
+                <a
+                  href="#"
+                  role="button"
+                  id="dropdownProfile"
+                  data-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span>Madya Santosa</span>
+                  <img
+                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                </a>
+                <ul
+                  class="dropdown-menu border-0"
+                  aria-labelledby="dropdownProfile"
+                >
+                  <li class="nav-item mb-2 dropdown-item">
+                    <a href="profil.html" class="nav-link"
+                      ><i class="fa fa-fw fa-user"></i> Profil</a
+                    >
+                  </li>
+                  <li class="nav-item mb-2 dropdown-item">
+                    <a href="index.html" class="nav-link logout"
+                      ><i class="fa fa-fw fa-sign-out-alt"></i> Keluar</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </nav>
+        <div class="container-fluid">
+          <h1 class="mt-3 mb-3">Respon Otomatis</h1>
+          <div class="card mt-3">
+            <div class="card-header">
+              <h5 class="card-title float-left mt-2">Daftar Perangkat</h5>
+              <button
+                class="btn btn-orange float-right"
+                data-toggle="modal"
+                data-target="#tambahModal"
+              >
+                <i class="fa fa-fw fa-plus"></i> Tambah
+              </button>
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="width: 100px">#</th>
+                    <th style="width: 300px">Kata Kunci</th>
+                    <th style="width: 300px">Jawaban</th>
+                    <th class="text-center" style="width: 300px">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>/sayHello</td>
+                    <td>Ibu Ibu Bapack Bapack</td>
+                    <td class="text-center">
+                      <a href="#" class="btn btn-warning m-1"
+                        ><i class="fa fa-fw fa-edit"></i> Edit</a
+                      >
+                      <a href="#" class="btn btn-danger m-1"
+                        ><i class="fa fa-fw fa-trash"></i> Hapus</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>/lokasi</td>
+                    <td>Bangli, Bali, Indonesia Boss</td>
+                    <td class="text-center">
+                      <a href="#" class="btn btn-warning m-1"
+                        ><i class="fa fa-fw fa-edit"></i> Edit</a
+                      >
+                      <a href="#" class="btn btn-danger m-1"
+                        ><i class="fa fa-fw fa-trash"></i> Hapus</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="tambahModal"
+      tabindex="-1"
+      aria-labelledby="tambahModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tambahModalLabel">Tambah Respon</h5>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="card rounded-0">
+                  <div class="card-body">
+                    <form action="" method="POST" id="formResponOtomatis">
+                      <div class="form-group mb-3">
+                        <label for="perangkat" class="mb-2">Perangkat</label>
+                        <select
+                          name="perangkat"
+                          id="perangkat"
+                          class="form-select form-control rounded-0"
+                        >
+                          <option value="1">MS Shop</option>
+                        </select>
+                      </div>
+                      <div class="form-group mb-3">
+                        <label for="keyword" class="mb-2">Kata Kunci</label>
+                        <input
+                          id="keyword"
+                          class="form-control"
+                          name="keyword"
+                          type="text"
+                          placeholder="cth: bantuan"
+                        />
+                        <span id="keywordVal" style="font-style: italic"></span>
+                      </div>
+                      <div class="form-group mb-3">
+                        <label for="pesan" class="mb-2">Pesan</label>
+                        <textarea
+                          class="form-control rounded-0"
+                          name="pesan"
+                          id="pesan"
+                          cols="30"
+                          rows="5"
+                        ></textarea>
+                        <span id="pesanVal" style="font-style: italic"></span>
+                      </div>
+                      <div class="form-group mb-3">
+                        <label for="lokasi" class="mb-2">Lokasi</label>
+                        <input
+                          id="lokasi"
+                          class="form-control"
+                          name="lokasi"
+                          type="text"
+                          data-toggle="modal"
+                          data-target="#mapModal"
+                          placeholder="kirim lokasi"
+                        />
+                        <span id="lokasiVal" style="font-style: italic"></span>
+                      </div>
+                      <button class="btn btn-orange col-12 rounded-0">
+                        Simpan
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="mapModal"
+      tabindex="-1"
+      aria-labelledby="mapModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="mapModalLabel">Lokasi</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="googleMap" style="width: 100%; height: 380px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAwGI8GPi6h-7egC0kplUQRucDCDznetQ" refer
+ 
+    "></script>
+    <script src="vendor/bootstrap-5.0.0-alpha3-dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/map.js"></script>
+    <script src="assets/js/messageValidation.js"></script>
+    <script type="module" src="assets/js/viewSidebar.js"></script>
+  </body>
+</html>

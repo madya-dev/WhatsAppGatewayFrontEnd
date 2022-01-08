@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dahsboard - Whatsapp gateway</title>
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-5.0.0-alpha3-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+    <script src="assets/js/auth.js"></script>
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <ul class="navbar-nav sidebar" id="sidebar">
+        <div class="container">
+          <div class="brand">
+            <a href="dashboard.html" class="nav-link"
+              ><i class="fa fa-robot"></i> <span class="logo">Logo</span></a
+            >
+          </div>
+          <div id="menu-container" style="margin-top: -10px">
+            <div class="spinner spiner-grow"></div>
+          </div>
+        </div>
+      </ul>
+      <div class="content">
+        <nav class="navbar topbar">
+          <div class="container">
+            <button class="btn" id="sidebarToggle" accesskey="s">
+              <i class="fa fa-fw fa-bars"></i>
+            </button>
+            <ul class="navbar-nav ml-auto">
+              <div class="profile dropleft">
+                <a
+                  href="#"
+                  role="button"
+                  id="dropdownProfile"
+                  data-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span>Madya Santosa</span>
+                  <img
+                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                </a>
+                <ul
+                  class="dropdown-menu border-0"
+                  aria-labelledby="dropdownProfile"
+                >
+                  <li class="nav-item mb-2 dropdown-item">
+                    <a href="profil.html" class="nav-link"
+                      ><i class="fa fa-fw fa-user"></i> Profil</a
+                    >
+                  </li>
+                  <li class="nav-item mb-2 dropdown-item">
+                    <a href="index.html" class="nav-link logout"
+                      ><i class="fa fa-fw fa-sign-out-alt"></i> Keluar</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </nav>
+        <div class="container-fluid">
+          <h1 class="mt-3">Pesan Terkirim</h1>
+
+          <div class="card mt-3 rounded-0">
+            <div class="card-header">
+              <div class="form-group row">
+                <div class="col-md-6 col-lg-8">
+                  <!-- <label for="">Perangkat</label> -->
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <select
+                    name="perangkat"
+                    id="perangkatHistory"
+                    class="form-select mt-2"
+                  >
+                    <option value="">MS Shop</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="width: 100px">#</th>
+                    <th style="width: 300px">Tanggal</th>
+                    <th style="width: 300px">Tujuan</th>
+                    <th style="width: 300px">Pesan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>21 Nov 2020</td>
+                    <td>MS Shop</td>
+                    <td>Nasi Goreng Murah</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>21 Nov 2020</td>
+                    <td>R3dox</td>
+                    <td>Nasi Goreng Murah</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="vendor/bootstrap-5.0.0-alpha3-dist/js/bootstrap.min.js"></script>
+    <script type="module" src="assets/js/viewSidebar.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/pesanTerkirim.js"></script>
+  </body>
+</html>

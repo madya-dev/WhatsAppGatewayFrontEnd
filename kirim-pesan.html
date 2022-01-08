@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirim Pesan - Whatsapp gateway</title>
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-5.0.0-alpha3-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+    <script src="assets/js/auth.js"></script>
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <ul class="navbar-nav sidebar" id="sidebar">
+        <div class="container">
+          <div class="brand">
+            <a href="dashboard.html" class="nav-link"
+              ><i class="fa fa-robot"></i> <span class="logo">Logo</span></a
+            >
+          </div>
+          <div id="menu-container" style="margin-top: -10px">
+            <div class="spinner spiner-grow"></div>
+          </div>
+        </div>
+      </ul>
+      <div class="content">
+        <nav class="navbar topbar">
+          <div class="container">
+            <button class="btn" id="sidebarToggle" accesskey="s">
+              <i class="fa fa-fw fa-bars"></i>
+            </button>
+            <ul class="navbar-nav ml-auto">
+              <div class="profile dropleft">
+                <a
+                  href="#"
+                  role="button"
+                  id="dropdownProfile"
+                  data-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span>Madya Santosa</span>
+                  <img
+                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+                    alt=""
+                    class="rounded-circle"
+                  />
+                </a>
+                <ul
+                  class="dropdown-menu border-0"
+                  aria-labelledby="dropdownProfile"
+                >
+                  <li class="nav-item mb-2 dropdown-item">
+                    <a href="profil.html" class="nav-link"
+                      ><i class="fa fa-fw fa-user"></i> Profil</a
+                    >
+                  </li>
+                  <li class="nav-item mb-2 dropdown-item">
+                    <a href="index.html" class="nav-link logout"
+                      ><i class="fa fa-fw fa-sign-out-alt"></i> Keluar</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </nav>
+        <div class="container-fluid">
+          <h1 class="mt-3 mb-3">Kirim Pesan</h1>
+          <div class="row pb-3">
+            <div class="col-12 sub-menu-kirim-pesan ">
+              <div class="row">
+                <div class="col-lg-2">
+                  <div class="list-group rounded-0" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-text-list" data-toggle="list" href="#list-text" role="tab" aria-controls="text">Teks</a>
+                    <a class="list-group-item list-group-item-action" id="list-lokasi-list" data-toggle="list" href="#list-lokasi" role="tab" aria-controls="lokasi">Lokasi</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-file" role="tab" aria-controls="file">File</a>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="tab-content" id="nav-tabContent">
+              <div class="card rounded-0 tab-pane fade show active" id="list-text" role="tabpanel" aria-labelledby="list-text-list">
+                <div class="card-body">
+                  <form action="" enctype="multipart/form-data" method="POST" id="formText">
+                    <div class="form-group mb-3">
+                      <label for="perangkatText" class="mb-2">Perangkat</label>
+                      <select
+                        name="perangkatText"
+                        id="perangkatText"
+                        class="form-control rounded-0  list-perangkat"
+                      >
+                        <option value="">Tidak Ada Perangkat</option>
+                      </select>
+                      <span
+                      id="perangkatTextVal"
+                      style="font-style: italic"
+                    ></span>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="tujuanText" class="mb-2">Tujuan</label>
+                      <input
+                        class="form-control form-select"
+                        name="tujuanText"
+                        id="tujuanText"
+                        type="text"
+                        data-toggle="modal"
+                        data-target="#kontakModal"
+                        placeholder="kontak"
+                        readonly
+                        value=""
+                      />
+                      <span
+                      id="tujuanTextVal"
+                      style="font-style: italic"
+                    ></span>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="pesan" class="mb-2">Teks</label>
+                      <textarea
+                        class="form-control rounded-0"
+                        name="text"
+                        id="text"
+                        cols="30"
+                        rows="5"
+                      ></textarea>
+                      <span
+                      id="textVal"
+                      style="font-style: italic"
+                    ></span>
+                    </div>
+                    <button class="btn btn-orange col-12 rounded-0">
+                      Kirim Teks
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="card rounded-0 tab-pane fade show " id="list-lokasi" role="tabpanel" aria-labelledby="list-lokasi-list">
+                <div class="card-body">
+                  <form action="" enctype="multipart/form-data" method="POST" id="formLokasi">
+                    <div class="form-group mb-3">
+                      <label for="perangkatLokasi" class="mb-2">Perangkat</label>
+                      <select
+                        name="perangkatLokasi"
+                        id="perangkatLokasi"
+                        class="form-control rounded-0 list-perangkat"
+                      >
+                        <option value="">Tidak Ada Perangkat</option>
+                      </select>
+                      <span
+                      id="perangkatLokasiVal"
+                      style="font-style: italic"
+                    ></span>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="tujuan" class="mb-2">Tujuan</label>
+                      <input
+                        class="form-control form-select"
+                        name="tujuanLokasi"
+                        id="tujuanLokasi"
+                        type="text"
+                        data-toggle="modal"
+                        data-target="#kontakModal"
+                        placeholder="kontak"
+                        readonly
+                      />
+                      <span
+                      id="tujuanLokasiVal"
+                      style="font-style: italic"
+                    ></span>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="lokasi" class="mb-2">Lokasi</label>
+                      <input
+                        id="lokasi"
+                        class="form-control"
+                        name="lokasi"
+                        type="text"
+                        data-toggle="modal"
+                        data-target="#mapModal"
+                        readonly
+                      />
+                      <span
+                      id="lokasiVal"
+                      style="font-style: italic"
+                    ></span>
+                    <div id="googleMap" style="width: 100%; height: 380px"></div>
+                    </div>
+             
+                    <button class="btn btn-orange col-12 rounded-0">
+                      Kirim Lokasi
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="card rounded-0 tab-pane fade show " id="list-file" role="tabpanel" aria-labelledby="list-file-list">
+                <div class="card-body">
+                  <form action="" enctype="multipart/form-data" method="POST" id="formFile">
+                    <div class="form-group mb-3">
+                      <label for="perangkatFile" class="mb-2">Perangkat</label>
+                      <select
+                        name="perangkatFile"
+                        id="perangkatFile"
+                        class="form-control rounded-0 list-perangkat"
+                      >
+                        <option value="">Tidak Ada Perangkat</option>
+                      </select>
+                      <span
+                      id="perangkatFileVal"
+                      style="font-style: italic"
+                    ></span>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="tujuanFile" class="mb-2">Tujuan</label>
+                      <input
+                        class="form-control form-select"
+                        name="tujuanFile"
+                        id="tujuanFile"
+                        type="text"
+                        data-toggle="modal"
+                        data-target="#kontakModal"
+                        placeholder="kontak"
+                        readonly
+                      />
+                      <span
+                      id="tujuanFileVal"
+                      style="font-style: italic"
+                    ></span>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="waktu" class="mb-2">Gambar</label>
+                      <input
+                        type="file"
+                        class="form-control rounded-0"
+                        id="file"
+                        name="file"
+                        placeholder="tidak ada gambar yang dipilih"
+                      />
+                      <span
+                      id="fileVal"
+                      style="font-style: italic"
+                    ></span>
+                    </div>
+                    <button class="btn btn-orange col-12 rounded-0">
+                      Kirim File
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+    
+    <div
+      class="modal fade"
+      id="kontakModal"
+      tabindex="-1"
+      aria-labelledby="kontakModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="kontakModalLabel">Pilih Kontak</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body table-responsive">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input kontak"
+                        type="checkbox"
+                        value="085333751616"
+                        id="flexCheckDefault"
+                        data-nama = "Madya Santosa"
+                        
+                      />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Madya Santosa
+                      </label>
+                    </div>
+                  </td>
+                  <td>085333751616</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input kontak"
+                        type="checkbox"
+                        value="083119030893"
+                        id="flexCheckDefault"
+                        data-nama = " Rupadana"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Rupadana
+                      </label>
+                    </div>
+                  </td>
+                  <td>083119030893</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input kontak"
+                        type="checkbox"
+                        value="085333751616"
+                        id="flexCheckDefault"
+                        data-nama = "Madya Santosa"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Madya Santosa
+                      </label>
+                    </div>
+                  </td>
+                  <td>085333751616</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input kontak"
+                        type="checkbox"
+                        value="085333751616"
+                        id="flexCheckDefault"
+                        data-nama = "Madya Santosa"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Madya Santosa
+                      </label>
+                    </div>
+                  </td>
+                  <td>085333751616</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Batal
+            </button>
+            <button type="button" class="btn btn-orange" id="pilihKontak">Pilih</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAwGI8GPi6h-7egC0kplUQRucDCDznetQ" refer
+ 
+"></script>
+    <script src="vendor/bootstrap-5.0.0-alpha3-dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/map.js"></script>
+    <script src="assets/js/kirimPesan.js"></script>
+    <script type="module" src="assets/js/viewSidebar.js"></script>
+    <script src="vendor/sweatalert2/sweetalert2.all.min.js"></script>
+  </body>
+</html>
